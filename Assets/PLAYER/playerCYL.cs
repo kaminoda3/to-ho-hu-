@@ -317,6 +317,7 @@ public class playerCYL : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {
+            D.SetActive(true); L.SetActive(false); R.SetActive(false);
             hantei.SetActive(true);
             obj1.transform.position = new Vector2(transform.position.x + 0.5f, transform.localPosition.y + 0.3f);
             obj2.transform.position = new Vector2(transform.position.x - 0.5f, transform.localPosition.y + 0.3f);

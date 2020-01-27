@@ -17,40 +17,34 @@ public class MOBfab2CTL : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //１段目開始位置から→方向へ動かす
+        //１段目開始位置から右方向へ動かす
         if (transform.position.y == 4f)
         {
-            Debug.Log(1);
             transform.position = new Vector2(transform.position.x + speed, transform.position.y);
         }
-        //右端に到達とき↓に動かす
+        //右端に到達とき下に動かす
         if (transform.position.x >= 2f && transform.position.y >= 2)
         {
-            Debug.Log(2);
             transform.position = new Vector2(transform.position.x, transform.position.y - speed);
         }
-        //２段目右端に到達したとき←に動かす
+        //２段目右端に到達したとき左に動かす
         if (transform.position.y <= 2f)
         {
-            Debug.Log(3);
             transform.position = new Vector2(transform.position.x - speed, transform.position.y);
         }
-        //２段目左端に到達した時↓に動かす
-        if (transform.position.x <= -6f && transform.position.y <= 3f)
+        //２段目左端に到達したとき下に動かす
+        if (transform.position.x <= -7f && transform.position.y <= 3f)
         {
-            Debug.Log(4);
             transform.position = new Vector2(transform.position.x + speed, transform.position.y - speed);
         }
-        //３段目左端に到達したとき→に動かす
+        //３段目左端に到達したとき右に動かす
         if (transform.position.y <= 0f)
         {
-            Debug.Log(5);
             transform.position = new Vector2(transform.position.x + speed * 2, transform.position.y);
         }
-        //右端に到達とき↓に動かす
+        //右端に到達とき下に動かす
         if (transform.position.x >= 2f && transform.position.y <= 1f)
         {
-            Debug.Log(6);
             transform.position = new Vector2(transform.position.x - speed, transform.position.y - speed);
         }
         if (transform.position.y <= -6)

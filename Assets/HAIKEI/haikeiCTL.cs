@@ -16,7 +16,7 @@ public class haikeiCTL : MonoBehaviour
         transform.position = new Vector2(transform.position.x, transform.position.y - 0.01f);
         if(transform.position.y < -9f)
         {
-            transform.position = new Vector2(-2f, 9);
+            transform.position = new Vector2(-3f, 9);
         }
     }
 }

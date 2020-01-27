@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//左上端Start
-
-public class MOBfab2CTL : MonoBehaviour
+public class MOBfab3CTL : MonoBehaviour
 {
     private float speed = 0.05f;
     //メモ　X　左端：-6f 右端　2f 　Y　上:4f下-4 間隔１
+
     // Start is called before the first frame update
     void Start()
     {
 
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -21,7 +19,7 @@ public class MOBfab2CTL : MonoBehaviour
         if (transform.position.y == 4f)
         {
             Debug.Log(1);
-            transform.position = new Vector2(transform.position.x + speed, transform.position.y);
+            transform.position = new Vector2(transform.position.x - speed, transform.position.y);
         }
         //右端に到達とき↓に動かす
         if (transform.position.x >= 2f && transform.position.y >= 2)
@@ -53,9 +51,6 @@ public class MOBfab2CTL : MonoBehaviour
             Debug.Log(6);
             transform.position = new Vector2(transform.position.x - speed, transform.position.y - speed);
         }
-        if (transform.position.y <= -6)
-        {
-            Destroy(gameObject);
-        }
     }
 }
+

@@ -13,6 +13,11 @@ public class MOBfab1CTL : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector2(transform.position.x, transform.position.y - 0.03f);
+        transform.position = new Vector2(transform.position.x, transform.position.y - 0.05f);
+
+        if (transform.position.y <= -6)
+        {
+            Destroy(gameObject);
+        }
     }
 }

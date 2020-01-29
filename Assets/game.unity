@@ -1303,6 +1303,7 @@ MonoBehaviour:
   mob2: {fileID: 8330931682983446518, guid: 8c715ff1e88cbb948bea3000326a399a, type: 3}
   boss: {fileID: 707703362205259470, guid: 4fe30246fe0c5c04787b9e95753553d3, type: 3}
   player: {fileID: 1473060889}
+  check: 1
 --- !u!82 &1247251861
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1486,6 +1487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1396890190}
   - component: {fileID: 1396890189}
+  - component: {fileID: 1396890191}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1597,12 +1599,51 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396890188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.427265, y: -1.0278414, z: 0.08327222}
+  m_LocalPosition: {x: -3, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1396890191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396890188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4f0f29fa90c15e4ca1c2e77ce62f18a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_axisMove: 0
+  m_inheritAngle: 0
+  m_startOnAwake: 1
+  m_startOnAwakeDelay: 1
+  m_startOnEnable: 0
+  m_startOnEnableDelay: 1
+  m_loop: 1
+  m_atRandom: 1
+  m_shotList:
+  - m_shotObj: {fileID: 0}
+    m_afterDelay: 5
+  - m_shotObj: {fileID: 0}
+    m_afterDelay: 5
+  m_shotRoutineFinishedCallbackEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1430438785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,6 +1792,7 @@ MonoBehaviour:
   power: 200
   shotse: {fileID: 1247251861}
   shot: 1
+  enemyPOPobj: {fileID: 1247251858}
 --- !u!23 &1473060893
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2307,12 +2349,12 @@ PrefabInstance:
     - target: {fileID: 8330931682983446509, guid: 8c715ff1e88cbb948bea3000326a399a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.8
       objectReference: {fileID: 0}
     - target: {fileID: 8330931682983446509, guid: 8c715ff1e88cbb948bea3000326a399a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6
+      value: 3.56
       objectReference: {fileID: 0}
     - target: {fileID: 8330931682983446509, guid: 8c715ff1e88cbb948bea3000326a399a,
         type: 3}

@@ -9,7 +9,7 @@ public class mobenemyCTL : MonoBehaviour
     [SerializeField] GameObject boss;
     [SerializeField] GameObject player;
     private int count=0;
-    private bool check = false;
+    public bool check = true;
     /*メモ　X:(外)-8f or -6f or (中)-2f or 2f or (外)4f
             Y:(外)6f or 4f */
     // Start is called before the first frame update
@@ -186,11 +186,18 @@ public class mobenemyCTL : MonoBehaviour
         mob1.AddComponent<BOSSCTL>();
         count++;
     }
-    IEnumerator Shotcheck()
+    void Shotcheck()
     {
-player.GetComponent<playerCYL>().shot=false;
+      var PW= player.GetComponent<playerCYL>().power;
+        PW -= PW;
 
-        yield return new WaitForSeconds(1f);
+        StartCoroutine("shotcheck");
+    }
+    IEnumerator shotcheck()
+    {
+        yield return new WaitForSeconds(5f);
+        var PW = player.GetComponent<playerCYL>().power;
+        PW += PW;
     }
 }
 

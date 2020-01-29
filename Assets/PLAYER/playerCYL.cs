@@ -19,11 +19,11 @@ public class playerCYL : MonoBehaviour
     [SerializeField] GameObject hantei;
     [SerializeField] public int power;
     [SerializeField] AudioSource shotse;
-    public bool shot ;
+    public bool shot = true;
+    [SerializeField] GameObject enemyPOPobj;
     // Start is called before the first frame update
     void Start()
     {
-        shot = true;
         StartCoroutine("Tam1");
         StartCoroutine("Tam2");
         StartCoroutine("Tam3");
@@ -43,18 +43,15 @@ public class playerCYL : MonoBehaviour
 
     IEnumerator Tam1()
     {
-        if (shot == true)
+        while (power >= 10)
         {
-            while (true)
-            {
-                //弾を生成
-                var bullets = Instantiate(bullet, transform.position, Quaternion.identity);
-                bullets.transform.position = new Vector3(transform.position.x, transform.position.y + 0.4f);
-                yield return new WaitForSeconds(0.05f);
-            }
+            //弾を生成
+            var bullets = Instantiate(bullet, transform.position, Quaternion.identity);
+            bullets.transform.position = new Vector3(transform.position.x, transform.position.y + 0.4f);
+            yield return new WaitForSeconds(0.05f);
         }
-
     }
+
     IEnumerator Tam2()
     {
         if (shot == true)
@@ -342,15 +339,14 @@ public class playerCYL : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(shot);
-        if (shot == true)
+       /* if (shot == true)
         {
-            shotse.volume = 0.02f;
+            shotse.volume = 0.1f;
         }
         else
         {
             shotse.volume = 0;
-        }
+        }*/
 
         //入力認識
         float x = Input.GetAxisRaw("Horizontal");

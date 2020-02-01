@@ -55,8 +55,8 @@ MonoBehaviour:
   m_usePauseAndResume: 0
   m_pauseTime: 0
   m_resumeTime: 0
-  m_useAutoRelease: 0
-  m_autoReleaseTime: 10
+  m_useAutoRelease: 1
+  m_autoReleaseTime: 3
   m_shotFiredCallbackEvents:
     m_PersistentCalls:
       m_Calls: []

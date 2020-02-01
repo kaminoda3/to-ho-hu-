@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4258125968498135682}
   - component: {fileID: 4258125968498135687}
   - component: {fileID: 4258125968498135683}
+  - component: {fileID: 114908267281161012}
   m_Layer: 0
   m_Name: MOBfab1
   m_TagString: enemy
@@ -117,6 +118,32 @@ CapsuleCollider2D:
   m_Offset: {x: -0.00000011920929, y: -0.005449295}
   m_Size: {x: 0.73820066, y: 0.7711344}
   m_Direction: 0
+--- !u!114 &114908267281161012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4258125968498135740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4f0f29fa90c15e4ca1c2e77ce62f18a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_axisMove: 0
+  m_inheritAngle: 0
+  m_startOnAwake: 1
+  m_startOnAwakeDelay: 1
+  m_startOnEnable: 0
+  m_startOnEnableDelay: 1
+  m_loop: 1
+  m_atRandom: 0
+  m_shotList:
+  - m_shotObj: {fileID: 0}
+    m_afterDelay: 0
+  m_shotRoutineFinishedCallbackEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4258125970298890143
 GameObject:
   m_ObjectHideFlags: 0

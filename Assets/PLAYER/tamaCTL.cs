@@ -22,9 +22,12 @@ public class tamaCTL : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
+    { 
         if (collision. gameObject.CompareTag("enemy"))
+        {
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag("boss"))
         {
             Destroy(gameObject);
         }

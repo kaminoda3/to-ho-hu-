@@ -5,11 +5,17 @@ using UnityEngine;
 public class mobenemyCTL : MonoBehaviour
 {
     [SerializeField] GameObject mob;
+    [SerializeField] GameObject mobA1;
+    [SerializeField] GameObject mobA2;
+    [SerializeField] GameObject mobB1;
+
     [SerializeField] GameObject mob2;
     [SerializeField] GameObject boss;
     [SerializeField] GameObject player;
     private int count=0;
     public bool check = true;
+    //弾幕図鑑
+    [SerializeField] GameObject dnmk1;
     /*メモ　X:(外)-8f or -6f or (中)-2f or 2f or (外)4f
             Y:(外)6f or 4f */
     // Start is called before the first frame update
@@ -48,7 +54,6 @@ public class mobenemyCTL : MonoBehaviour
         {
             count++;
             Invoke("Boss1", 9f);
-            Invoke("Shotcheck", 5f);
         }
 
     }
@@ -63,7 +68,7 @@ public class mobenemyCTL : MonoBehaviour
         {
             if (cou < 5)
             {
-                var mob1 = Instantiate(mob, new Vector2(2f,6f), Quaternion.identity);
+                var mob1 = Instantiate(mobA1, new Vector2(2f,6f), Quaternion.identity);
                 mob1.AddComponent<MOBfab1CTL>();
                 yield return new WaitForSeconds(1f);
                 cou++;
@@ -86,9 +91,10 @@ public class mobenemyCTL : MonoBehaviour
         {
             if (cou < 5)
             {
-                var mob1 = Instantiate(mob, new Vector2(-7f,6f), Quaternion.identity);
-                yield return new WaitForSeconds(1f);
+                var mob1 = Instantiate(mobA1, new Vector2(-7f,6f), Quaternion.identity);
+               
                 mob1.AddComponent<MOBfab1CTL>();
+                yield return new WaitForSeconds(1f);
                 cou++;
             }
             else
@@ -109,7 +115,7 @@ public class mobenemyCTL : MonoBehaviour
         {
             if (cou < 5)
             {
-                var mob1 = Instantiate(mob, new Vector2(-10f, 4f), Quaternion.identity);
+                var mob1 = Instantiate(mobA2, new Vector2(-10f, 4f), Quaternion.identity);
                 yield return new WaitForSeconds(1f);
                 mob1.AddComponent<MOBfab2CTL>();
                 cou++;
@@ -132,7 +138,7 @@ public class mobenemyCTL : MonoBehaviour
         {
             if (cou < 5)
             {
-                var mob1 = Instantiate(mob, new Vector2(4f, 4f), Quaternion.identity);
+                var mob1 = Instantiate(mobA2, new Vector2(4f, 4f), Quaternion.identity);
                 yield return new WaitForSeconds(1f);
                 mob1.AddComponent<MOBfab3CTL>();
                 cou++;
@@ -150,7 +156,7 @@ public class mobenemyCTL : MonoBehaviour
     }
     IEnumerator Ins5()
     {
-        var mob1 = Instantiate(mob2, new Vector2(-3f, 6f), Quaternion.identity);
+        var mob1 = Instantiate(mobB1, new Vector2(-3f, 6f), Quaternion.identity);
         yield return new WaitForSeconds(1f);
         mob1.AddComponent<MOBfab4CTL>();
     }
@@ -160,7 +166,7 @@ public class mobenemyCTL : MonoBehaviour
     }
     IEnumerator Ins6()
     {
-        var mob1 = Instantiate(mob2, new Vector2(2f, 6f), Quaternion.identity);
+        var mob1 = Instantiate(mobB1, new Vector2(2f, 6f), Quaternion.identity);
         yield return new WaitForSeconds(1f);
         mob1.AddComponent<MOBfab4CTL>();
     }
@@ -170,7 +176,7 @@ public class mobenemyCTL : MonoBehaviour
     }
     IEnumerator Ins7()
     {
-        var mob1 = Instantiate(mob2, new Vector2(-7f, 6f), Quaternion.identity);
+        var mob1 = Instantiate(mobB1, new Vector2(-7f, 6f), Quaternion.identity);
         yield return new WaitForSeconds(1f);
         mob1.AddComponent<MOBfab4CTL>();
         count++;
@@ -181,23 +187,11 @@ public class mobenemyCTL : MonoBehaviour
     }
     IEnumerator BossIns1()
     {
-        var mob1 = Instantiate(boss, new Vector2(0f, 6f), Quaternion.identity);
+        var boss1= Instantiate(boss, new Vector2(0f, 6f), Quaternion.identity);
         yield return new WaitForSeconds(1f);
-        mob1.AddComponent<BOSSCTL>();
+        boss1.AddComponent<BOSSCTL>();
         count++;
     }
-    void Shotcheck()
-    {
-      var PW= player.GetComponent<playerCYL>().power;
-        PW -= PW;
 
-        StartCoroutine("shotcheck");
-    }
-    IEnumerator shotcheck()
-    {
-        yield return new WaitForSeconds(5f);
-        var PW = player.GetComponent<playerCYL>().power;
-        PW += PW;
-    }
 }
 

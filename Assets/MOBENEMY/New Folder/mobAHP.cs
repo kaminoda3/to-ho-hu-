@@ -2,31 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class tama1CTL : MonoBehaviour
+public class mobAHP : MonoBehaviour
 {
-
+    [SerializeField] int HP;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
-    {/*
-        //画面外に出たら削除
-        if (!GetComponent<Renderer>().isVisible)
-        {
-            Destroy(gameObject);
-        }*/
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (HP < 0)
         {
             Destroy(gameObject);
         }
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("tama"))
+        {
+            HP -= 1;
+        }
+    }
 }

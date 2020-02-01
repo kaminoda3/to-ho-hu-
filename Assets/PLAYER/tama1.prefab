@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5539486446918947102}
   m_Layer: 0
   m_Name: tama1
-  m_TagString: Untagged
+  m_TagString: tama
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,7 +142,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2292714649803513566}
   - component: {fileID: 3598576944899073044}
-  - component: {fileID: 4901150285507329479}
   m_Layer: 0
   m_Name: player_reimu_9
   m_TagString: Untagged
@@ -212,19 +211,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &4901150285507329479
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7561308675199650458}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.0059278905}
-  m_Size: {x: 0.2109375, y: 0.20793182}
-  m_Direction: 0

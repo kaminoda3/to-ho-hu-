@@ -48,9 +48,10 @@ public class UbhRandomShot : UbhBaseShot
 
         if (m_shooting)
         {
+            GetComponent<AudioSource>().Play();
             return;
         }
-
+        
         m_shooting = true;
         m_delayTimer = 0f;
 
@@ -64,6 +65,7 @@ public class UbhRandomShot : UbhBaseShot
         for (int i = 0; i < m_bulletNum; i++)
         {
             m_numList.Add(i);
+
         }
     }
 
@@ -71,7 +73,9 @@ public class UbhRandomShot : UbhBaseShot
     {
         if (m_shooting == false)
         {
+
             return;
+
         }
 
         if (m_delayTimer >= 0f)
@@ -111,12 +115,13 @@ public class UbhRandomShot : UbhBaseShot
 
         ShotBullet(bullet, bulletSpeed, angle);
         FiredShot();
-
+        GetComponent<AudioSource>().Play();
         m_numList.RemoveAt(index);
 
         if (m_numList.Count <= 0)
         {
             FinishedShot();
+            GetComponent<AudioSource>().Play();
         }
         else
         {

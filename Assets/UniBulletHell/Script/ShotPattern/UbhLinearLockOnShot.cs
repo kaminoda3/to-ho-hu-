@@ -37,8 +37,10 @@ public class UbhLinearLockOnShot : UbhLinearShot
 
     public override void Shot()
     {
+        
         AimTarget();
         base.Shot();
+        GetComponent<AudioSource>().Play();
     }
 
     public override void FinishedShot()
@@ -46,8 +48,10 @@ public class UbhLinearLockOnShot : UbhLinearShot
         if (m_setTargetFromTag)
         {
             m_targetTransform = null;
+          
         }
         base.FinishedShot();
+       
     }
 
     protected override void Update()
@@ -62,6 +66,7 @@ public class UbhLinearLockOnShot : UbhLinearShot
 
     private void AimTarget()
     {
+        
         if (m_targetTransform == null && m_setTargetFromTag)
         {
             m_targetTransform = UbhUtil.GetTransformFromTagName(m_targetTagName, m_randomSelectTagTarget, m_nearestSelectTagTarget, transform);

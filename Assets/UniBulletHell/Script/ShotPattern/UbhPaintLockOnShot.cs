@@ -35,6 +35,7 @@ public class UbhPaintLockOnShot : UbhPaintShot
     {
         AimTarget();
         base.Shot();
+        GetComponent<AudioSource>().Play();
     }
 
     public override void FinishedShot()

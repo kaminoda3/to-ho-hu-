@@ -41,7 +41,7 @@ public class UbhBulletSimpleSprite2d : UbhBullet
         {
             for (int i = 0; i < m_spriteRenderers.Length; i++)
             {
-                m_spriteRenderers[i].enabled = isActive;
+                //m_spriteRenderers[i].enabled = isActive;
             }
         }
     }

@@ -67,11 +67,12 @@ public class UbhSpiralShot : UbhBaseShot
 
         ShotBullet(bullet, m_bulletSpeed, angle);
         FiredShot();
-
+        GetComponent<AudioSource>().Play();
         m_nowIndex++;
 
         if (m_nowIndex >= m_bulletNum)
         {
+
             FinishedShot();
         }
         else

@@ -7,6 +7,21 @@ TagManager:
   - enemy
   - boss
   - tama
+  - br
+  - enemytama
+  - cb
+  - EPO
+  - bgm
+  - shotse
+  - point
+  - bgm2
+  - po1
+  - po2
+  - sc
+  - kabe
+  - kabe2
+  - idou
+  - muteki
   layers:
   - Default
   - TransparentFX

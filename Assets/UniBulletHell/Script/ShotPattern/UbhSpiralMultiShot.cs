@@ -35,6 +35,7 @@ public class UbhSpiralMultiShot : UbhBaseShot
 
         if (m_shooting)
         {
+            
             return;
         }
 
@@ -46,7 +47,9 @@ public class UbhSpiralMultiShot : UbhBaseShot
     {
         if (m_shooting == false)
         {
+            
             return;
+
         }
 
         if (m_delayTimer >= 0f)
@@ -84,6 +87,7 @@ public class UbhSpiralMultiShot : UbhBaseShot
         if (m_nowIndex >= m_bulletNum)
         {
             FinishedShot();
+            
         }
         else
         {

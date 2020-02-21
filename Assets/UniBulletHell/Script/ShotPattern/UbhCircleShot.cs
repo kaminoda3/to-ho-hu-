@@ -10,6 +10,7 @@ public class UbhCircleShot : UbhBaseShot
     {
         if (m_bulletNum <= 0 || m_bulletSpeed <= 0f)
         {
+
             Debug.LogWarning("Cannot shot because BulletNum or BulletSpeed is not set.");
             return;
         }
@@ -30,7 +31,7 @@ public class UbhCircleShot : UbhBaseShot
         }
 
         float shiftAngle = 360f / (float)m_bulletNum;
-
+        GetComponent<AudioSource>().Play();
         for (int i = 0; i < m_bulletNum; i++)
         {
             UbhBullet bullet = GetBullet(transform.position);
